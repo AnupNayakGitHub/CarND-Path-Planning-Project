@@ -20,9 +20,10 @@ Action plan depends on the target speed, acceptable jerk, obstacles on the road,
 
 To avoid collision, I calculate the expected trajectory for each identifided obstacle. If the obstacle is within 30, we avoid moving to the obstacle's lane. It applies to all the lanes.
 
-When all 3 - stay on the lane, shift left, shift right- are safe, I decide based on the goal to stay on the middle lane.
-When all the lanes are not safe, I plan to slowdown the vehicle and stay on the current lane.
-When current lane is not safe but shifting is safe, I plan to shift right.
+- When all 3 - stay on the lane, shift left, shift right- are safe, I decide based on the goal to stay on the middle lane.
+- When all the lanes are not safe, I plan to slowdown the vehicle and stay on the current lane.
+- When current lane is not safe but shifting is safe, I plan to shift right.
+
 The above are primary conditions for choosing the future lanes. All other boundary conditions are self explanatory within the code.
 
 Upon decding the future lane, I use t Ferent coordinates of the future lane and acceleration as explained the walkthrough to find the additional few points in the path and add to the list
@@ -31,6 +32,6 @@ Upon decding the future lane, I use t Ferent coordinates of the future lane and 
 The planned waypoints list is sent to the vehicle to control the vehicle.
 
 ## Potential Improvements
-Using PID conroller to control the acceleration better
-Using relative speed for lane shifting decission.
+- Using PID conroller to control the acceleration better.
+- Using relative speed for lane shifting decission.
 
